@@ -1,0 +1,48 @@
+#!name=Yogurt Plugin Collections
+#!desc=常用App内购解锁&脚本配置
+#!author = Yogurt
+#!icon=https://raw.githubusercontent.com/cc63/ICON/main/icons/SuanNai.png
+#!date = 2024-10-18 21:31:28
+
+# In-App_Purchase&VVeboFix
+[Script]
+# Cubox_In-App_Purchase
+http-response ^https?:\/\/cubox\.(cc|pro)\/c\/api\/userInfo script-path=https://raw.githubusercontent.com/Guding88/Script/main/Cubox.js, requires-body=true, tag=Cubox
+
+# Focos_In-App_Purchase
+http-response ^https?:\/\/focos\.oracle\.bendingspoonsapps\.com\/v2\/users\/setup script-path=https://raw.githubusercontent.com/Guding88/Script/main/Focos.js, requires-body=true, tag=Focos
+
+# Agenda_In-App_Purchase
+http-response ^https?:\/\/accounts\.agenda\.com\/users script-path=https://raw.githubusercontent.com/Guding88/Script/main/Agenda.js, requires-body=true, tag=Agenda
+
+# Nicegram_In-App_Purchase
+http-response ^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth) script-path=https://github.com/ddgksf2013/MoYu/raw/master/NicegramProCrack.js, requires-body=true, timeout=60, tag=NicegramProCrack
+
+# Drafts_In-App_Purchase
+http-response ^https:\/\/backend\.getdrafts\.com\/api\/v1\/verification\/verify_receipt requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Drafts.js, requires-body=true, tag=Drafts
+
+# Fantastical_In-App_Purchase
+http-response ^https:\/\/api\.flexibits\.com\/(v1\/auth\/device|v1\/account\/details) requires-body=1,script-path=https://raw.githubusercontent.com/deezertidal/private/master/js-backup/Crack/fantastical.js, requires-body=true, tag=Fantastical
+
+# Keep_In-App_Purchase
+http-response ^https:\/\/api\.gotokeep\.com requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/keep.js, requires-body=true, tag=Keep
+
+# ButterCamera_In-App_Purchase
+http-response https:\/\/api4\.bybutter\.com\/v4\/* requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/hy.js, requires-body=true, tag=ButterCamera
+
+# Bear_In-App_Purchase
+http-response ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/xzj.js, requires-body=true, tag=Bear
+# Node Detection Tool
+
+[Script]
+generic script-path=https://raw.githubusercontent.com/deezertidal/private/main/ip-api.js,tag=节点信息查询,timeout=10,img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Domestic.png
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/ytb_check.js, tag=YouTube-解锁查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/nf_check.js, tag=Netflix-解锁查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/disney_check.js, tag=Disney-解锁查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney+.png
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/param_check.js, tag=Paramount-解锁查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Paramount.png
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/dazn_check.js, tag=Dazn-解锁查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/DAZN_2.png
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/discovery_check.js, tag=Discovery-解锁查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/discovery+.png
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/check.js, tag=流媒体-节点解锁查询, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png
+
+[MITM]
+hostname = cubox.cc,cubox.pro,focos.oracle.bendingspoonsapps.com,accounts.agenda.com, nicegram.cloud,backend.getdrafts.com,api.flexibits.com,api.gotokeep.com,api4.bybutter.com,buy.itunes.apple.com
