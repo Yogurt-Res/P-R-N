@@ -1,0 +1,33 @@
+#!name=Yogurt Plugin Collections
+#!desc=常用App内购解锁&脚本配置
+#!author = Yogurt
+#!icon=https://raw.githubusercontent.com/cc63/ICON/main/icons/SuanNai.png
+#!date = 2026-07-04 11:22:59
+
+# In-App_Purchase&VVeboFix
+[Script]
+# Cubox_In-App_Purchase
+response if ${url} ~= /^https?:\/\/cubox\.(cc|pro)\/c\/api\/userInfo/i then script("https://raw.githubusercontent.com/Yogurt-Res/P-R-N/refs/heads/main/ujs/Cubox.js") with tag="Cubox", requires_body=true
+
+# Drafts_In-App_Purchase
+response if ${url} ~= /^https:\/\/backend\.getdrafts\.com\/api\/v1\/verification\/verify_receipt/i then script("https://raw.githubusercontent.com/Yogurt-Res/P-R-N/refs/heads/main/ujs/Drafts.js") with tag="Drafts", requires_body=true
+
+# Fantastical_In-App_Purchase
+response if ${url} ~= /^https:\/\/api\.flexibits\.com\/(v1\/auth\/device|v1\/account\/details)/i then script("https://raw.githubusercontent.com/Yogurt-Res/P-R-N/refs/heads/main/ujs/fantastical.js") with tag="Fantastical", requires_body=true
+
+# Bear_In-App_Purchase
+response if ${url} ~= /^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt/i then script("https://raw.githubusercontent.com/Yogurt-Res/P-R-N/refs/heads/main/ujs/Bear.js") with tag="Bear", requires_body=true
+
+# Node Detection Tool
+[Script]
+generic then script("https://raw.githubusercontent.com/Yogurt-Res/P-R-N/refs/heads/main/ujs/ip-api.js") with tag="节点信息查询", img_url="https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Domestic.png", timeout=10
+generic then script("https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/ytb_check.js") with tag="YouTube-解锁查询", img_url="https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"
+generic then script("https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/nf_check.js") with tag="Netflix-解锁查询", img_url="https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png"
+generic then script("https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/disney_check.js") with tag="Disney-解锁查询", img_url="https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Disney+.png"
+generic then script("https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/param_check.js") with tag="Paramount-解锁查询", img_url="https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Paramount.png"
+generic then script("https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/dazn_check.js") with tag="Dazn-解锁查询", img_url="https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/DAZN_2.png"
+generic then script("https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/discovery_check.js") with tag="Discovery-解锁查询", img_url="https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/discovery+.png"
+generic then script("https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/check.js") with tag="流媒体-节点解锁查询", img_url="https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png"
+
+[MITM]
+hostname = cubox.cc,cubox.pro,accounts.agenda.com,backend.getdrafts.com,api.flexibits.com,buy.itunes.apple.com
